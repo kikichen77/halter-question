@@ -38,10 +38,10 @@ def get_tower_id_from_farmId(data, farmId_query):
 def get_tower_id_with_high_rssi(same_farmerId_list):
     highest_rssi_value = same_farmerId_list[0]['rssi']
     highest_rssi_towerId = same_farmerId_list[0]['towerId']
-    for highest_rssi_towerId_list in same_farmerId_list:
-        if highest_rssi_towerId_list['rssi'] > highest_rssi_value:
-            highest_rssi_value = highest_rssi_towerId_list['rssi']
-            highest_rssi_towerId = highest_rssi_towerId_list['towerId']
+    for same_farmerId_data in same_farmerId_list:
+        if same_farmerId_data['rssi'] > highest_rssi_value:
+            highest_rssi_value = same_farmerId_data['rssi']
+            highest_rssi_towerId = same_farmerId_data['towerId']
     print(f"{highest_rssi_towerId} is the highest amongst the towers for the given farm id")
 
 
