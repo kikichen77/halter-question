@@ -17,13 +17,13 @@ The result will be shown as above
 * https://comms-tech-test.s3.ap-southeast-2.amazonaws.com/tower_stream/tower-stream-2023-10-19T06%3A58%3A24.657Z.csv
 * https://comms-tech-test.s3.ap-southeast-2.amazonaws.com/tower_stream/tower-stream-2023-10-19T06%3A58%3A24.746Z.csv
 
-I cannot get access the csv through these two links, if you want to test these two files, please download the csv file and put in the file folder
+I cannot get access to download these two csv files through these two links, if you want to test these two files, please download the csv file and put in the file folder 
 
 ![img.png](img.png)
 
-After that modify the code (line 16), copy and paste to replace line 16.
+After that modify the code (line 16), copy and paste to replace line 16 (make sure the path and filename is correct!!). 
 
-` df5 = pd.read_csv("./file/tower-stream-2023-10-19T06_58_24.657Z.csv")`
+`df5 = pd.read_csv("./file/tower-stream-2023-10-19T06_58_24.657Z.csv")`
     
 `df6 = pd.read_csv("./file/tower-stream-2023-10-19T06_58_24.746Z.csv")`
 
