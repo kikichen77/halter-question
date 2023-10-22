@@ -21,7 +21,7 @@ I cannot get access to download these two csv files through these two links, if 
 
 ![img.png](img.png)
 
-After that modify the code (line 16), copy and paste to replace line 16 (make sure the path and filename is correct!!). 
+After that modify the code (line 15), copy and paste to replace line 15 (make sure the path and filename is correct!!). 
 
 `df5 = pd.read_csv("./file/tower-stream-2023-10-19T06_58_24.657Z.csv")`
     
