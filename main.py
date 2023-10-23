@@ -30,7 +30,7 @@ def get_tower_id_from_farmId(data, farmId_query):
         if same_farmerId_list['farmId'] == farmId_query:
             records_for_given_farm.append(same_farmerId_list)
     if not records_for_given_farm:
-        print("No records found for the provided farmID.")
+        print("No records founded.")
         return
     get_tower_id_with_high_rssi(records_for_given_farm)
 
