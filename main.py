@@ -26,9 +26,9 @@ def get_farmID_input():
 
 def get_tower_id_from_farmId(data, farmId_query):
     records_for_given_farm = []
-    for record in data:
-        if record['farmId'] == farmId_query:
-            records_for_given_farm.append(record)
+    for same_farmerId_list in data:
+        if same_farmerId_list['farmId'] == farmId_query:
+            records_for_given_farm.append(same_farmerId_list)
     if not records_for_given_farm:
         print("No records found for the provided farmID.")
         return
@@ -36,13 +36,31 @@ def get_tower_id_from_farmId(data, farmId_query):
 
 
 def get_tower_id_with_high_rssi(same_farmerId_list):
-    highest_rssi_value = same_farmerId_list[0]['rssi']
-    highest_rssi_towerId = same_farmerId_list[0]['towerId']
+    towerId_dict={}
+    highest_rssi_value = float('-inf')
+    highest_rssi_towerId = 0
+
     for same_farmerId_data in same_farmerId_list:
-        if same_farmerId_data['rssi'] > highest_rssi_value:
-            highest_rssi_value = same_farmerId_data['rssi']
-            highest_rssi_towerId = same_farmerId_data['towerId']
+        each_towerId = same_farmerId_data['towerId']
+        each_rssi = same_farmerId_data['rssi']
+        if each_towerId not in towerId_dict:
+            towerId_dict[each_towerId]=[]
+        towerId_dict[each_towerId].append(each_rssi)
+
+    for towerId, rssi in towerId_dict.items():
+        avg_rssi = sum(rssi)/len(rssi)
+        if avg_rssi>highest_rssi_value:
+            highest_rssi_value = avg_rssi
+            highest_rssi_towerId=towerId
+
     print(f"{highest_rssi_towerId} is the highest amongst the towers for the given farm id")
+
+
+
+
+
+
+
 
 
 main()

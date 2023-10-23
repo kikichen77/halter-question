@@ -1,5 +1,5 @@
 # halter-interview
-### Question:  Takes in farm id as a parameter and returns the best tower for the given farm.
+### Question:  Takes in farm id as a parameter and returns the best tower for the given farm. The tower is considered the “best” if the AVERAGE RSSI is the highest amongst the towers for the given farm id.
 
 ## Set Up
 `pip install pandas` Then run the main.py
